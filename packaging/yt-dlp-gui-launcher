@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+export PYTHONPATH="/usr/share/yt-dlp-gui/src${PYTHONPATH:+:${PYTHONPATH}}"
+
+exec python -m ytdlp_gui.app "$@"

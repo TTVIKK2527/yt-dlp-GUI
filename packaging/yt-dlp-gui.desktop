@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=yt-dlp GUI
+Comment=Comprehensive desktop interface for yt-dlp
+Exec=yt-dlp-gui
+Icon=/usr/share/pixmaps/yt-dlp-gui.png
+Terminal=false
+Categories=AudioVideo;Network;
+StartupNotify=true
+StartupWMClass=yt-dlp-gui

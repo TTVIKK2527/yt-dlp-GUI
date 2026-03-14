@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yt-dlp-gui"
+version = "0.6.4"
+description = "Comprehensive desktop GUI for yt-dlp"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "yt-dlp-GUI maintainers" }]
+license = { text = "MIT" }
+dependencies = []
+
+[project.scripts]
+yt-dlp-gui = "ytdlp_gui.app:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
