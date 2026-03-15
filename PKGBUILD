@@ -1,5 +1,5 @@
 pkgname=yt-dlp-gui
-pkgver=0.6.4
+pkgver=0.6.5
 pkgrel=1
 pkgdesc='Comprehensive desktop GUI for yt-dlp'
 arch=('any')

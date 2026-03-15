@@ -714,14 +714,24 @@ class YtDlpGui(Tk):
         pal = (_barebones_palette() if self.barebones_ui_var.get() else _modern_palette()).copy()
         if not self.barebones_ui_var.get() and self.custom_bg_color:
             base = self.custom_bg_color
-            pal["window"] = self._shade(base, 0.34)
-            pal["surface"] = self._shade(base, 0.46)
-            pal["panel"] = self._shade(base, 0.56)
-            pal["header"] = self._shade(base, 0.70)
-            pal["tab_bg"] = self._shade(base, 0.62)
-            pal["muted"] = self._shade(base, 1.25)
-            pal["input_bg"] = self._shade(base, 1.95)
+            dark_bg = self._is_dark_color(base)
+
+            pal["window"] = base
+            pal["surface"] = base
+            pal["panel"] = base
+            pal["header"] = base
+            pal["tab_bg"] = self._shade(base, 0.86 if dark_bg else 0.94)
+            pal["input_bg"] = self._shade(base, 1.24 if dark_bg else 0.90)
             pal["input_fg"] = "#ecf3ff" if self._is_dark_color(pal["input_bg"]) else "#0f1729"
+
+            if dark_bg:
+                pal["text"] = "#e6efff"
+                pal["title"] = "#f7fbff"
+                pal["muted"] = "#b7c7e6"
+            else:
+                pal["text"] = "#0f1729"
+                pal["title"] = "#0b1220"
+                pal["muted"] = "#2b3a53"
         if not self.barebones_ui_var.get() and self.custom_accent_color:
             pal["accent"] = self.custom_accent_color
         return pal
